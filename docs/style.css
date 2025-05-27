@@ -1,79 +1,49 @@
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
   background-color: #000;
-  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
-  overflow-x: hidden;
-}
-
-.imessage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px 6px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(28, 28, 28, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
-}
-
-.unread-count {
-  background: #0a84ff;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 14px;
-}
-
-.profile-info {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.name {
-  font-size: 15px;
-  font-weight: 500;
 }
 
 .chat-background {
-  padding: 12px;
-  margin-bottom: 90px;
+  height: calc(100vh - 58px - 60px);
+  overflow-y: auto;
+  padding: 12px 8px 100px;
+  box-sizing: border-box;
 }
 
 .message {
   max-width: 75%;
   padding: 10px 14px;
   margin: 6px 0;
-  border-radius: 20px;
+  font-size: 16px;
   position: relative;
   word-wrap: break-word;
-  font-size: 16px;
+  line-height: 1.4;
 }
 
 .message.sent {
-  background-color: #0a84ff;
-  color: #fff;
   margin-left: auto;
-  border-bottom-right-radius: 4px;
+  background: #0a84ff;
+  color: #fff;
+  border-radius: 20px 20px 4px 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
 }
 
 .message.received {
-  background-color: #3a3a3c;
-  color: #fff;
   margin-right: auto;
-  border-bottom-left-radius: 4px;
+  background: #3a3a3c;
+  color: #fff;
+  border-radius: 20px 20px 20px 4px;
+  clip-path: polygon(5% 100%, 0 85%, 0 0, 100% 0, 100% 100%);
 }
 
-.bubble-wrapper {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.message.swiped {
+  transform: translateX(-60px);
+  transition: transform 0.2s ease;
 }
 
 .timestamp {
@@ -91,13 +61,7 @@ body {
   font-size: 11px;
   color: #aaa;
   margin-top: 4px;
-  margin-bottom: 12px;
   text-align: right;
-}
-
-.message.swiped {
-  transform: translateX(-60px);
-  transition: transform 0.2s ease;
 }
 
 .composer-bar {
@@ -124,57 +88,5 @@ body {
 
 .plus-icon, .mic-icon {
   font-size: 20px;
-  padding: 0 5px;
   color: white;
-}
-
-.editor-panel {
-  background: #111;
-  color: white;
-  padding: 10px;
-}
-
-.chat-background {
-  padding: 12px;
-  padding-bottom: 100px;
-  overflow-x: hidden;
-  touch-action: none;
-}
-
-.imessage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px 6px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(28, 28, 28, 0.72);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
-  min-height: 58px;
-}
-
-.composer-bar {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background: #1c1c1e;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
-  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.text-input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 20px;
-  margin: 0 10px;
-  border: none;
-  background: #2c2c2e;
-  color: white;
-  font-size: 16px;
 }
