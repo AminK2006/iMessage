@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <title>iMessage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="imessage-header">
+    <div class="left-section">
+      <span class="back-arrow">&#x276E;</span>
+      <span class="unread-count">769</span>
+    </div>
+    <div class="profile-info">
+      <div class="avatar" style="background:#0a84ff;width:42px;height:42px;border-radius:50%;margin:0 auto;"></div>
+      <div class="name">lulu</div>
+    </div>
+    <div class="call-button">📹</div>
+  </div>
+
+  <div class="editor-panel">
+    <h2>Editor Panel</h2>
+    <label>Sender:
+      <select id="senderSelect">
+        <option value="sent">You</option>
+        <option value="received">Them</option>
+      </select>
+    </label>
+    <label>Message:
+      <input type="text" id="messageText">
+    </label>
+    <label>Date & Time:
+      <input type="datetime-local" id="messageTime">
+    </label>
+    <label>Status:
+      <select id="status">
+        <option value="">None</option>
+        <option value="Delivered">Delivered</option>
+        <option value="Read">Read</option>
+      </select>
+    </label>
+    <button onclick="addMessage()">Add Message</button>
+    <button onclick="toggleEditor()">Hide Editor</button>
+  </div>
+
+  <div class="chat-background" id="chatBackground" style="padding: 10px; margin-bottom: 100px;"></div>
+
+  <div class="composer-bar">
+    <div class="plus-icon">+</div>
+    <input type="text" placeholder="iMessage" class="text-input" id="msgInput" />
+    <div class="mic-icon">🎤</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
